@@ -292,4 +292,13 @@ public abstract class BasePage {
     public void waitForGreyContainerDisappeared(WebElement element) {
         getWait20().until(ExpectedConditions.invisibilityOf(element));
     }
+
+    protected void scrollByCoordinatesToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        Point point = element.getLocation();
+        int xCoord = point.getX();
+        int yCoord = point.getY();
+        getWait20();
+        js.executeScript("window.scrollTo(" + xCoord + "," + (yCoord-200) + ")");
+    }
 }

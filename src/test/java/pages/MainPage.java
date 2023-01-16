@@ -627,4 +627,10 @@ public class MainPage extends FooterMenuPage {
 
         return getAttribute(element, "class");
     }
+
+    public MainPage scrollByCoordinatesToWeatherDashboardFooterMenu() {
+        scrollByCoordinatesToElement(weatherDashboardFooterMenu);
+
+        return this;
+    }
 }
